@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-import os
-
 import aws_cdk as cdk
 
 from pipe_line_test.pipe_line_test_stack import PipeLineTestStack
