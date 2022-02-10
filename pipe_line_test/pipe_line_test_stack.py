@@ -2,7 +2,6 @@ from aws_cdk import (
     # Duration,
     Stack,
     # aws_sqs as sqs,
-    aws_codepipeline,
     pipelines,
 )
 from constructs import Construct
