@@ -11,8 +11,8 @@ class PipeLineTestAppStack(cdk.Stack):
 
         aws_lambda(
             self, "LambdaFunction", 
-            runtime=Runtime.NODEJS_12_X,
+            runtime=aws_lambda.Runtime.NODEJS_12_X,
             handler="index.handler",
-            code=InlineCode("exports.handler = _ => 'Hello, CDK';")
+            code=aws_lambda.InlineCode("exports.handler = _ => 'Hello, CDK';")
         )
 
