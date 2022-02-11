@@ -24,7 +24,11 @@ class PipeLineTestStack(Stack):
                         )
            )
 
-        pipeline.add_stage(TestPipelineAppStage(self, "test",
+        test_stage = pipeline.add_stage(TestPipelineAppStage(self, "test",
             env=Environment(account="889043514394", region="ap-southeast-2")))
-         
+
+        test_stage.add_post(pipelines.ManualApprovalStep('approval'))
+
+        prod_stage = pipeline.add_stage(TestPipelineAppStage(self, "prod",
+            env=Environment(account="889043514394", region="ap-southeast-2")))
        
