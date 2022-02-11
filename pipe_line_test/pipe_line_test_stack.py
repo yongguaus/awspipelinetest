@@ -1,10 +1,9 @@
 from aws_cdk import (
-    # Duration,
     Stack,
-    # aws_sqs as sqs,
     pipelines,
 )
 from constructs import Construct
+from pipe_line_test.pipe_line_test_stage_stack import TestPipelineAppStage
 
 class PipeLineTestStack(Stack):
 
@@ -22,5 +21,8 @@ class PipeLineTestStack(Stack):
                                 "cdk synth"]
                         )
            )
+
+        pipeline.add_stage(TestPipelineAppStage(self, "test",
+            env=cdk.Environment(account="889043514394", region="ap-southeast-2")))
          
        
